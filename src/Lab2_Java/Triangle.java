@@ -12,7 +12,7 @@ public class Triangle {
     @Getter private double angle1;
     @Getter private double angle2;
     @Getter private double angle3;
-    @Getter private double perimetr;
+    @Getter private double perimeter;
     @Getter private double square;
 
     public Triangle(){
@@ -20,7 +20,7 @@ public class Triangle {
             setRand();
         }while (!isExist());
         Angle();
-        Perimetr();
+        Perimeter();
         Square();
     }
 
@@ -40,12 +40,12 @@ public class Triangle {
         angle3 = Math.round(Math.toDegrees(Math.acos(((b * b) + (c * c) - (a * a)) / (2 * c * b))));
     }
 
-    public void Perimetr() {
-        perimetr = a + b + c;
+    public void Perimeter() {
+        perimeter = a + b + c;
     }
 
     public void Square() {
-        square = Math.round(Math.sqrt((perimetr / 2) * ((perimetr / 2) - a) * ((perimetr / 2) - b) * ((perimetr / 2) - c)));
+        square = Math.round(Math.sqrt((perimeter / 2) * ((perimeter / 2) - a) * ((perimeter / 2) - b) * ((perimeter / 2) - c)));
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Triangle {
                 ", Угол 1 = " + angle1 +
                 ", Угол 2 = " + angle2 +
                 ", Угол 3 = " + angle3 +
-                ", Периметр = " + perimetr +
+                ", Периметр = " + perimeter +
                 ", Площадь = " + square +
                 '}';
     }

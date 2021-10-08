@@ -2,29 +2,29 @@ package Lab2_Java;
 
 public class RightTriangle extends Triangle {
     public RightTriangle() {
-        do {
+        super();
+        while (!isRight()){
             setRand();
-        } while (!isExist());
+        }
         Angle();
-        Perimetr();
+        Perimeter();
         Square();
     }
 
-    @Override
-    public boolean isExist() {
+    public boolean isRight() {
         return getC() > getA() && getC() > getB() && (getA() * getA()) + (getB() * getB()) == (getC() * getC());
     }
 
     @Override
     public String toString() {
-        return "Прямоугльный треугольник{ " +
+        return "Прямоугольный треугольник{ " +
                 "a = " + getA() +
                 ", b = " + getB() +
                 ", c = " + getC() +
                 ", Угол 1 = " + getAngle1() +
                 ", Угол 2 = " + getAngle2() +
                 ", Угол 3 = " + getAngle3() +
-                ", Периметр = " + getPerimetr() +
+                ", Периметр = " + getPerimeter() +
                 ", Площадь = " + getSquare() +
                 '}';
     }
