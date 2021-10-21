@@ -1,6 +1,8 @@
 package Lab2_Java;
 
-public class RightTriangle extends Triangle {
+import java.io.Serializable;
+
+public class RightTriangle extends Triangle implements Serializable {
     public RightTriangle() {
         super();
         while (!isRight()){

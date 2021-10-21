@@ -2,8 +2,10 @@ package Lab2_Java;
 
 import lombok.Getter;
 import java.util.Random;
+import java.io.Serializable;
 
-public class Triangle {
+
+public class Triangle implements Serializable {
     Random random = new Random();
 
     @Getter private double a;
