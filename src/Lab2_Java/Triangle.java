@@ -26,6 +26,15 @@ public class Triangle implements Serializable {
         Square();
     }
 
+    public Triangle(double a, double b, double c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        Angle();
+        Perimeter();
+        Square();
+    }
+
     public void setRand() {
         this.a = random.nextInt(10) + 1;
         this.b = random.nextInt(10) + 1;

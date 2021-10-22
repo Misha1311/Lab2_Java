@@ -1,6 +1,10 @@
 package Lab2_Java;
 
 public class Main {
+    public static final int TriangleCount = 5;
+    public static Triangle[] triangle = new Triangle[TriangleCount];
+    public static RightTriangle[] rightTriangle = new RightTriangle[TriangleCount];
+
 
     public static void main(String[] args) {
         double averagesquare = 0;
