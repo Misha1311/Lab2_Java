@@ -1,8 +1,9 @@
 package Lab2_Java;
 
 import lombok.Getter;
-import java.util.Random;
+
 import java.io.Serializable;
+import java.util.Random;
 
 
 public class Triangle implements Serializable {
@@ -17,10 +18,10 @@ public class Triangle implements Serializable {
     @Getter private double perimeter;
     @Getter private double square;
 
-    public Triangle(){
+    public Triangle(boolean isNew) {
         do {
             setRand();
-        }while (!isExist());
+        } while (!isExist());
         Angle();
         Perimeter();
         Square();

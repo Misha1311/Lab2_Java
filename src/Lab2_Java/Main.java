@@ -12,26 +12,24 @@ public class Main {
         Serialize serialize = new Serialize();
 
         for (int i = 0; i < TriangleCount; i++) {
-            triangle[i] = new Triangle();
+            triangle[i] = new Triangle(true);
             System.out.println(triangle[i].toString());
             averagesquare += triangle[i].getSquare();
         }
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
 
         for (int j = 0; j < TriangleCount; j++) {
-            rightTriangle[j]= new RightTriangle();
+            rightTriangle[j] = new RightTriangle(true);
             System.out.println(rightTriangle[j].toString());
-            if (rightTriangle[j].getC() > maxhypos)
-            {
+            if (rightTriangle[j].getC() > maxhypos) {
                 maxhypos = rightTriangle[j].getC();
             }
         }
-        System.out.println("Средняя площадь " + averagesquare/5);
+        System.out.println("Средняя площадь " + averagesquare / 5);
         System.out.println("Максимальная гипотенуза " + maxhypos);
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\nНативная сериализация \n--------------------------------------------------------------------------------------------------------------------------------");
         serialize.SerializeSave();
         serialize.SerializeLoad();
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\nJSON сериализация \n--------------------------------------------------------------------------------------------------------------------------------");
         serialize.SerializeSaveJson();
         serialize.SerializeLoadJson();
     }

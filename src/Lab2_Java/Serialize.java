@@ -44,29 +44,42 @@ public class Serialize extends Main {
     }
 
     public void SerializeSaveJson() {
-        FileWriter outStream = null;
+        FileWriter outStreamT = null;
+        FileWriter outStreamR = null;
         try {
-            outStream = new FileWriter("Triangle.json");
-            BufferedWriter bw = new BufferedWriter(outStream);
-            bw.write(JSON.toJSONString(triangle));
-            bw.close();
-            outStream.close();
+            outStreamT = new FileWriter("Triangle.json");
+            outStreamR = new FileWriter("RightTriangle.json");
+            BufferedWriter bwT = new BufferedWriter(outStreamT);
+            BufferedWriter bwR = new BufferedWriter(outStreamR);
+            bwT.write(JSON.toJSONString(triangle));
+            bwR.write(JSON.toJSONString(rightTriangle));
+            bwT.close();
+            bwR.close();
+            outStreamT.close();
+            outStreamR.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void SerializeLoadJson() {
-        Scanner scanner = null;
+        Scanner scannerT = null;
+        Scanner scannerR = null;
         try {
-            scanner = new Scanner(new FileReader("Triangle.json"));
-            triangle = JSON.parseObject(scanner.nextLine(), Triangle[].class);
+            scannerT = new Scanner(new FileReader("Triangle.json"));
+            scannerR = new Scanner(new FileReader("RightTriangle.json"));
+            triangle = JSON.parseObject(scannerT.nextLine(), Triangle[].class);
+            rightTriangle = JSON.parseObject(scannerR.nextLine(), RightTriangle[].class);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        scanner.close();
         for (int i = 0; i < triangle.length; i++) {
             System.out.println(triangle[i].toString());
         }
+        for (int i = 0; i < rightTriangle.length; i++) {
+            System.out.println(rightTriangle[i].toString());
+        }
+        scannerT.close();
+        scannerR.close();
     }
 }

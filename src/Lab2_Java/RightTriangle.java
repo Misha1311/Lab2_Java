@@ -3,8 +3,8 @@ package Lab2_Java;
 import java.io.Serializable;
 
 public class RightTriangle extends Triangle implements Serializable {
-    public RightTriangle() {
-        super();
+    public RightTriangle(boolean isNew) {
+        super(true);
         while (!isRight()){
             setRand();
         }
